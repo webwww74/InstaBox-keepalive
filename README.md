@@ -34,7 +34,7 @@ Worker 本身**不能直接在 InstaBox 主机上跑 shell 命令**，它只能�
 | API Key | `ibk_...` 开头 | Worker 调用 InstaBox API 的凭据 |
 | 机器 ID | `m_...` 开头 | 要保活的那台机器的唯一 ID |
 
-**机器名不是机器 ID。** 像 `instabox-instapp99` 这种名字是给 CLI 用的，Worker 里必须填 `m_...` 开头的 ID，填名字会报 404。
+**机器名不是机器 ID。** 像 `my-machine` 这种名字是给 CLI 用的，Worker 里必须填 `m_...` 开头的 ID，填名字会报 404。
 
 ## 2. 第一步：拿到 API Key
 
@@ -60,7 +60,7 @@ curl -s https://api.instabox.sh/v1/machines -H "X-API-Key: ibk_你的Key"
 
 ```json
 "id": "m_xxxxxxxx",
-"name": "instabox-instapp99"
+"name": "my-machine"
 ```
 
 - 返回空列表 `[]`：Key 和机器不在同一个账号下，见上一节的登录方式提醒。
